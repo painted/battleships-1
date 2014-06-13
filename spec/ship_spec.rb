@@ -1,7 +1,7 @@
 require 'ship'
 
-describe Ship do
-  let(:ship) { Ship.new([:A1]) }
+shared_examples 'a ship' do
+  let(:ship) { described_class.new([:A1]) }
 
   it 'has some coordinates' do
     expect(ship.coordinates).to eq [:A1]
@@ -48,3 +48,4 @@ describe Ship do
     end
   end
 end
+
