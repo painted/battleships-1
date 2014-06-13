@@ -21,9 +21,14 @@ class Coordinate
 	end
 
 	def <=>(other_coordinate)
-		return nil unless other_coordinate.is_a?Coordinate
+		return nil unless other_coordinate.is_a? Coordinate
 		location.to_s <=> other_coordinate.location.to_s
 	end
+
+  def ==(other_coordinate)
+		return false unless other_coordinate.is_a? Coordinate
+		location.to_s == other_coordinate.location.to_s
+  end
 
 	def convert_to_number
 		location.to_s.slice(0).ord + location.to_s.slice(1..2).to_i
