@@ -3,8 +3,12 @@ class Coordinate
 	GRID_LETTERS = ("A".."J")
 	GRID_NUMBERS = ("1".."10")
 
+  def self.parse(string)
+    new(string)
+  end
+
 	def initialize(location)
-		@location = location
+    @location = location.to_sym
 	end
 
 	def location

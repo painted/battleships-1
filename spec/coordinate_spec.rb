@@ -5,8 +5,12 @@ describe Coordinate do
 
 	let(:b5)  { Coordinate.new(:B5)  }
 	let(:b11) { Coordinate.new(:B11) }
-	let(:one) { Coordinate.new(1)    }
+	let(:one) { Coordinate.new('1')    }
 	let(:a)   { Coordinate.new("a")  }
+
+  it 'can parse a string into a coordinate' do
+    expect(Coordinate.parse('B5')).to eq b5
+  end
 
 	context "knows if it's located on the (imaginary) grid or not" do
     it 'b5' do
@@ -54,7 +58,6 @@ describe Coordinate do
 		it 'a1 <=> a1' do
 			expect(a_one <=> a1).to eq 0
 		end
-
 	end
 
 end
