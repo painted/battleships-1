@@ -1,6 +1,10 @@
 require './battle'
 
-class BattleShipApp < Sinatra
+class BattleShipApp < Sinatra::Base
+	configure :development do 
+		register Sinatra::Reloader
+	end
+		
 
 
 
